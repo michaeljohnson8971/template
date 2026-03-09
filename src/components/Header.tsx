@@ -13,24 +13,21 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/60">
-      <div className="container mx-auto flex items-center justify-between h-18 px-6 lg:px-8 py-4">
-        <Link to="/home" className="flex items-baseline gap-1 group">
-          <span className="font-display text-2xl tracking-[0.04em] text-foreground group-hover:text-terracotta transition-colors">
-            DABL
-          </span>
-          <span className="font-body text-[0.65rem] font-medium uppercase tracking-[0.35em] text-muted-foreground">
-            Studio
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md">
+      <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-6">
+        <Link to="/home" className="group">
+          <span className="font-mono text-sm tracking-[0.35em] uppercase text-foreground group-hover:text-muted-foreground transition-colors">
+            DABL_STUDIO
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm font-medium tracking-wide transition-colors hover:text-terracotta ${
-                location.pathname === item.path ? "text-terracotta" : "text-muted-foreground"
+              className={`font-mono text-[11px] uppercase tracking-[0.2em] transition-colors hover:text-foreground ${
+                location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
               }`}
             >
               {item.label}
@@ -38,7 +35,7 @@ const Header = () => {
           ))}
           <Link
             to="/services#contact"
-            className="text-sm font-medium bg-primary text-primary-foreground px-6 py-2.5 rounded-full hover:bg-navy-light transition-all shadow-soft"
+            className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground border-b border-foreground pb-0.5 hover:text-muted-foreground hover:border-muted-foreground transition-colors"
           >
             Contact
           </Link>
@@ -49,19 +46,19 @@ const Header = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileOpen ? <X size={20} strokeWidth={1} /> : <Menu size={20} strokeWidth={1} />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border/60 px-6 pb-6 animate-fade-in">
+        <div className="md:hidden bg-background border-t border-border px-6 pb-8 animate-fade-in">
           {navItems.map((item) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setMobileOpen(false)}
-              className={`block py-3.5 text-base font-medium border-b border-border/30 ${
-                location.pathname === item.path ? "text-terracotta" : "text-foreground"
+              className={`block py-4 font-mono text-xs uppercase tracking-[0.2em] border-b border-border/50 ${
+                location.pathname === item.path ? "text-foreground" : "text-muted-foreground"
               }`}
             >
               {item.label}
@@ -70,7 +67,7 @@ const Header = () => {
           <Link
             to="/services#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-5 block text-center text-sm font-medium bg-primary text-primary-foreground px-5 py-3 rounded-full"
+            className="mt-6 block text-center font-mono text-xs uppercase tracking-[0.2em] text-foreground border border-foreground px-6 py-3"
           >
             Contact
           </Link>

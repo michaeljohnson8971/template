@@ -79,16 +79,14 @@ const SelectedWork = () => {
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="relative py-28 lg:py-36 bg-secondary">
-        <div className="container mx-auto px-6 lg:px-8">
+      <section className="border-b border-border">
+        <div className="container mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-5">
-              Portfolio
-            </p>
+            <p className="mono-label mb-6">Portfolio</p>
             <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-6">
               Selected Work
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base leading-relaxed">
               A selection of economic development strategy, research, and community investment projects delivered for public, nonprofit, and institutional partners.
             </p>
           </div>
@@ -96,47 +94,45 @@ const SelectedWork = () => {
       </section>
 
       {/* Projects */}
-      <section className="py-20 lg:py-28">
+      <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="space-y-20">
+          <div className="space-y-0">
             {projects.map((project, i) => (
               <div
                 id={project.slug}
                 key={project.slug}
-                className={`grid lg:grid-cols-2 gap-12 items-center scroll-mt-32`}
+                className="border-t border-border py-16 scroll-mt-32"
               >
-                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="w-full aspect-[4/3] bg-muted rounded-2xl shadow-card flex items-center justify-center">
-                    <span className="text-muted-foreground text-sm">Image Placeholder</span>
+                <div className="grid lg:grid-cols-12 gap-12">
+                  {/* Left column */}
+                  <div className="lg:col-span-5">
+                    <div className="flex items-center gap-4 mb-6">
+                      <span className="mono-label">{project.category}</span>
+                      <span className="w-4 h-px bg-foreground/20" />
+                      <span className="mono-label">{project.year}</span>
+                    </div>
+                    <h2 className="font-display text-2xl md:text-3xl text-foreground mb-2">
+                      {project.title}
+                    </h2>
+                    <p className="text-sm text-muted-foreground">{project.client}</p>
                   </div>
-                </div>
-                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs font-semibold uppercase tracking-[0.15em] text-terracotta">
-                      {project.category}
-                    </span>
-                    <span className="text-xs text-muted-foreground/50">•</span>
-                    <span className="text-xs text-muted-foreground">{project.year}</span>
-                  </div>
-                  <h2 className="font-display text-2xl md:text-3xl text-foreground mb-2">
-                    {project.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground/60 mb-5">{project.client}</p>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  <div className="bg-secondary/60 rounded-xl p-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground mb-3">
-                      Key Outcomes
+
+                  {/* Right column */}
+                  <div className="lg:col-span-6 lg:col-start-7">
+                    <p className="text-muted-foreground leading-relaxed mb-8">
+                      {project.description}
                     </p>
-                    <ul className="space-y-2">
-                      {project.outcomes.map((outcome) => (
-                        <li key={outcome} className="text-sm text-muted-foreground flex items-start gap-2.5">
-                          <ArrowRight size={12} className="text-terracotta mt-1 shrink-0" />
-                          {outcome}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="border-t border-border pt-6">
+                      <p className="mono-label mb-4">Key Outcomes</p>
+                      <ul className="space-y-3">
+                        {project.outcomes.map((outcome) => (
+                          <li key={outcome} className="text-sm text-muted-foreground flex items-start gap-3">
+                            <span className="w-4 h-px bg-foreground/30 mt-2.5 shrink-0" />
+                            {outcome}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -146,20 +142,20 @@ const SelectedWork = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-28 lg:py-36 bg-primary">
-        <div className="container mx-auto px-6 lg:px-8 text-center max-w-3xl">
+      <section className="py-32 lg:py-40 bg-primary border-t border-border">
+        <div className="container mx-auto px-6 lg:px-8 text-center max-w-2xl">
           <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-6">
             Interested in Working Together?
           </h2>
-          <p className="text-primary-foreground/60 text-lg mb-12 leading-relaxed">
+          <p className="text-primary-foreground/50 text-sm mb-14 leading-relaxed">
             We welcome conversations about new projects, research partnerships, and strategic initiatives.
           </p>
           <Link
             to="/services#contact"
-            className="inline-flex items-center gap-2.5 bg-terracotta text-accent-foreground px-10 py-4 rounded-full font-medium hover:bg-terracotta-light transition-all shadow-elevated"
+            className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground border-b border-primary-foreground/40 pb-1 hover:border-primary-foreground transition-colors"
           >
             Get in Touch
-            <ArrowRight size={16} />
+            <ArrowRight size={14} strokeWidth={1.5} />
           </Link>
         </div>
       </section>

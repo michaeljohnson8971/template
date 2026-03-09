@@ -1,46 +1,24 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Building2, Users, FileText, Handshake, TrendingUp, BarChart3, Rocket } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroCityscape from "@/assets/hero-cityscape.jpg";
-
-const valuePillars = [
-  {
-    icon: TrendingUp,
-    title: "Strategy",
-    description: "Actionable economic development frameworks that guide investment and growth.",
-  },
-  {
-    icon: BarChart3,
-    title: "Analysis",
-    description: "Research-driven insights that inform policy and program decisions.",
-  },
-  {
-    icon: Rocket,
-    title: "Implementation",
-    description: "From strategy to sustained action — partnership building and program launch.",
-  },
-];
 
 const expertise = [
   {
-    icon: Building2,
     title: "Economic Development Strategy",
     description: "Designing strategies that guide investment and strengthen local economies.",
     items: ["Strategic planning", "Investment frameworks", "District revitalization", "Program design"],
   },
   {
-    icon: Users,
     title: "Community Investment",
     description: "Supporting initiatives that bring coordinated capital and programs to neighborhoods.",
     items: ["Neighborhood investment strategies", "Coordinated capital deployment", "Inclusive development", "Place-based initiatives"],
   },
   {
-    icon: FileText,
     title: "Small Business Ecosystems",
     description: "Strengthening systems that support entrepreneurs and neighborhood business districts.",
     items: ["Ecosystem analysis", "Commercial corridor strategy", "Entrepreneurship support", "Small business programs"],
   },
   {
-    icon: Handshake,
     title: "Research & Policy",
     description: "Producing research and analysis that informs economic development decision-making.",
     items: ["Market analysis", "Policy evaluation", "Economic landscape studies", "Program assessment"],
@@ -73,56 +51,66 @@ const experiences = [
 const Home = () => {
   return (
     <main>
-      {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center">
-        <div className="absolute inset-0">
+      {/* Hero — asymmetric split inspired by re-designstudio */}
+      <section className="relative min-h-screen flex">
+        {/* Left: Image */}
+        <div className="hidden lg:block lg:w-1/2 relative">
           <img
             src={heroCityscape}
             alt="Chicago skyline from Montrose Harbor — photo by John Picken, CC BY 2.0"
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover grayscale"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/65 to-primary/30" />
         </div>
-        <div className="relative container mx-auto px-6 lg:px-8 py-32">
-          <div className="max-w-2xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-[3.5rem] text-primary-foreground leading-[1.15] animate-fade-up text-balance">
-              Building Stronger Local Economies Through Strategy, Research, and Community Investment
+        {/* Right: Content */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 lg:px-20 py-32 lg:py-0">
+          <div className="max-w-lg">
+            <p className="mono-label mb-8 animate-fade-up">Economic Development Consultancy</p>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[3.2rem] text-foreground leading-[1.15] animate-fade-up animation-delay-200 text-balance">
+              Building Stronger Local Economies Through Strategy, Research & Community Investment
             </h1>
-            <p className="mt-7 text-lg md:text-xl text-primary-foreground/75 leading-relaxed max-w-xl animate-fade-up animation-delay-200">
-              Economic development consultancy working with cities, nonprofits, and institutions to design initiatives that expand opportunity and strengthen neighborhood economies.
+            <p className="mt-8 text-base text-muted-foreground leading-relaxed max-w-md animate-fade-up animation-delay-400">
+              Working with cities, nonprofits, and institutions to design initiatives that expand opportunity and strengthen neighborhood economies.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4 animate-fade-up animation-delay-400">
+            <div className="mt-12 flex flex-wrap gap-6 animate-fade-up animation-delay-600">
               <Link
                 to="/services#contact"
-                className="inline-flex items-center gap-2.5 bg-terracotta text-accent-foreground px-8 py-4 rounded-full font-medium text-sm hover:bg-terracotta-light transition-all shadow-elevated"
+                className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-foreground border-b border-foreground pb-1 hover:text-muted-foreground hover:border-muted-foreground transition-colors"
               >
-                Let's Talk
-                <ArrowRight size={16} />
+                Get in Touch
+                <ArrowRight size={14} strokeWidth={1.5} />
               </Link>
               <Link
                 to="/services"
-                className="inline-flex items-center gap-2 border border-primary-foreground/25 text-primary-foreground px-8 py-4 rounded-full font-medium text-sm hover:bg-primary-foreground/10 transition-all"
+                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
               >
-                View Work & Services
+                View Services
               </Link>
             </div>
           </div>
         </div>
+        {/* Mobile hero image */}
+        <div className="lg:hidden absolute inset-0 -z-10">
+          <img
+            src={heroCityscape}
+            alt="Chicago skyline"
+            className="w-full h-full object-cover grayscale opacity-15"
+          />
+        </div>
       </section>
 
-      {/* Value Proposition Strip */}
-      <section className="py-20 bg-background">
+      {/* Value Strip */}
+      <section className="py-24 lg:py-32 border-t border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
-            {valuePillars.map((pillar) => (
-              <div key={pillar.title} className="flex items-start gap-5 p-6 rounded-2xl bg-card shadow-card">
-                <div className="w-12 h-12 rounded-xl bg-terracotta/10 flex items-center justify-center shrink-0">
-                  <pillar.icon className="text-terracotta" size={22} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h3 className="font-display text-lg text-foreground mb-1">{pillar.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-16">
+            {[
+              { title: "Strategy", description: "Actionable economic development frameworks that guide investment and growth." },
+              { title: "Analysis", description: "Research-driven insights that inform policy and program decisions." },
+              { title: "Implementation", description: "From strategy to sustained action — partnership building and program launch." },
+            ].map((pillar, i) => (
+              <div key={pillar.title} className={`animate-fade-up animation-delay-${(i + 1) * 200}`}>
+                <span className="mono-label">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-2xl text-foreground mt-4 mb-3">{pillar.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{pillar.description}</p>
               </div>
             ))}
           </div>
@@ -130,27 +118,22 @@ const Home = () => {
       </section>
 
       {/* Areas of Work */}
-      <section className="py-8 lg:py-10 bg-secondary">
-        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta mb-2 text-center">Areas of Work</p>
-          <h2 className="font-display text-lg md:text-xl text-foreground text-center mb-6">
+      <section className="py-24 lg:py-32 bg-secondary border-t border-border">
+        <div className="container mx-auto px-6 lg:px-8">
+          <p className="mono-label mb-4">Areas of Work</p>
+          <h2 className="font-display text-3xl md:text-4xl text-foreground mb-20">
             Core Focus Areas
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2.5">
-            {expertise.map((area) => (
-              <div
-                key={area.title}
-                className="bg-background p-4 rounded-xl shadow-card hover:shadow-elevated hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="w-9 h-9 rounded-lg bg-terracotta/10 flex items-center justify-center mb-3">
-                  <area.icon className="text-terracotta" size={18} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-sm text-foreground mb-1.5">{area.title}</h3>
-                <p className="text-muted-foreground text-xs mb-3 leading-relaxed">{area.description}</p>
-                <ul className="space-y-1.5">
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-16">
+            {expertise.map((area, i) => (
+              <div key={area.title} className="border-t border-border pt-8">
+                <span className="mono-label">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-xl text-foreground mt-4 mb-3">{area.title}</h3>
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{area.description}</p>
+                <ul className="space-y-2">
                   {area.items.map((item) => (
-                    <li key={item} className="text-xs text-muted-foreground flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-terracotta/50 mt-1.5 shrink-0" />
+                    <li key={item} className="text-xs text-muted-foreground flex items-start gap-3">
+                      <span className="w-4 h-px bg-foreground/30 mt-2 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -162,50 +145,70 @@ const Home = () => {
       </section>
 
       {/* Selected Experience */}
-      <section className="py-28 lg:py-36">
+      <section className="py-24 lg:py-32 border-t border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-5">Applied Experience</p>
-          <Link to="/work" className="group">
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-16 group-hover:text-terracotta transition-colors inline-flex items-center gap-3">
-              Selected Work
-              <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-            </h2>
-          </Link>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex items-end justify-between mb-20">
+            <div>
+              <p className="mono-label mb-4">Applied Experience</p>
+              <h2 className="font-display text-3xl md:text-4xl text-foreground">
+                Selected Work
+              </h2>
+            </div>
+            <Link to="/work" className="hidden md:inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors">
+              View All
+              <ArrowRight size={14} strokeWidth={1.5} />
+            </Link>
+          </div>
+          <div className="space-y-0">
             {experiences.map((exp, i) => (
-              <Link key={i} to={`/work#${exp.slug}`} className="bg-card rounded-2xl shadow-card overflow-hidden group hover:shadow-elevated hover:-translate-y-1 transition-all duration-300">
-                <div className="aspect-[16/9] bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">Image Placeholder</span>
-                </div>
-                <div className="p-8">
-                  <div className="w-10 h-1 rounded-full bg-terracotta mb-6" />
-                  <h3 className="font-display text-xl text-foreground mb-3 group-hover:text-terracotta transition-colors">{exp.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{exp.description}</p>
+              <Link
+                key={i}
+                to={`/work#${exp.slug}`}
+                className="group block border-t border-border py-10 hover:bg-secondary/50 transition-colors px-2 -mx-2"
+              >
+                <div className="grid md:grid-cols-12 gap-6 items-start">
+                  <span className="mono-label md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="font-display text-xl md:text-2xl text-foreground md:col-span-4 group-hover:translate-x-2 transition-transform">
+                    {exp.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed md:col-span-6">
+                    {exp.description}
+                  </p>
+                  <div className="md:col-span-1 flex justify-end">
+                    <ArrowRight size={16} strokeWidth={1.5} className="text-muted-foreground group-hover:text-foreground transition-colors" />
+                  </div>
                 </div>
               </Link>
             ))}
           </div>
+          <Link to="/work" className="md:hidden mt-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors">
+            View All Work
+            <ArrowRight size={14} strokeWidth={1.5} />
+          </Link>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-28 lg:py-36 bg-primary">
-        <div className="container mx-auto px-6 lg:px-8 text-center max-w-3xl">
+      <section className="py-32 lg:py-40 bg-primary border-t border-border">
+        <div className="container mx-auto px-6 lg:px-8 text-center max-w-2xl">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary-foreground/40 mb-8">
+            Let's Connect
+          </p>
           <h2 className="font-display text-3xl md:text-4xl text-primary-foreground mb-6">
             Every Project Starts With a Conversation
           </h2>
-          <p className="text-primary-foreground/60 text-lg mb-4 leading-relaxed">
-             If you are developing an initiative, conducting research, or exploring a new economic development strategy, we welcome the opportunity to collaborate.
-           </p>
-           <p className="text-primary-foreground/40 text-sm mb-12">
-             We typically respond within 1–2 business days.
+          <p className="text-primary-foreground/50 text-sm mb-4 leading-relaxed">
+            If you are developing an initiative, conducting research, or exploring a new economic development strategy, we welcome the opportunity to collaborate.
+          </p>
+          <p className="text-primary-foreground/30 text-xs mb-14 font-mono tracking-wide">
+            We typically respond within 1–2 business days.
           </p>
           <Link
             to="/services#contact"
-            className="inline-flex items-center gap-2.5 bg-terracotta text-accent-foreground px-10 py-4 rounded-full font-medium hover:bg-terracotta-light transition-all shadow-elevated"
+            className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary-foreground border-b border-primary-foreground/40 pb-1 hover:border-primary-foreground transition-colors"
           >
-            Let's Talk
-            <ArrowRight size={16} />
+            Get in Touch
+            <ArrowRight size={14} strokeWidth={1.5} />
           </Link>
         </div>
       </section>
