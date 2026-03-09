@@ -1,0 +1,110 @@
+# ===========================================
+# DABL Studio — robots.txt
+# ===========================================
+
+# --- Allowed: Search Engine Crawlers ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# --- Allowed: Social Media / Preview Bots ---
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# --- Blocked: AI Training Crawlers ---
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+# --- Blocked: Generic / Unwanted Scrapers ---
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+# --- Default: Allow all others ---
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dablstudio.com/sitemap.xml
