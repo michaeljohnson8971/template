@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { Search, BarChart3, Users, Lightbulb, ArrowRight, Briefcase, RefreshCw, MessageSquare } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 import communityImg from "@/assets/community-planning.jpg";
@@ -25,23 +25,23 @@ const services = [
 ];
 
 const methodology = [
-  { icon: Search, step: "01", title: "Discovery", description: "Stakeholder interviews and institutional landscape analysis to understand context, relationships, and opportunity." },
-  { icon: BarChart3, step: "02", title: "Research", description: "Market analysis and economic ecosystem mapping to build an evidence base for strategic decisions." },
-  { icon: Lightbulb, step: "03", title: "Strategy Development", description: "Actionable recommendations and program design grounded in research findings and stakeholder priorities." },
-  { icon: Users, step: "04", title: "Implementation", description: "Partnership development and program launch support to move from strategy to sustained action." },
+  { step: "01", title: "Discovery", description: "Stakeholder interviews and institutional landscape analysis to understand context, relationships, and opportunity." },
+  { step: "02", title: "Research", description: "Market analysis and economic ecosystem mapping to build an evidence base for strategic decisions." },
+  { step: "03", title: "Strategy Development", description: "Actionable recommendations and program design grounded in research findings and stakeholder priorities." },
+  { step: "04", title: "Implementation", description: "Partnership development and program launch support to move from strategy to sustained action." },
 ];
 
 const engagementModels = [
-  { icon: Briefcase, title: "Project-Based", description: "Defined scope engagements — from strategic plans and market studies to program design. Ideal for initiatives with clear deliverables and timelines." },
-  { icon: RefreshCw, title: "Retainer", description: "Ongoing advisory support for organizations managing multiple economic development priorities. Flexible hours with consistent availability." },
-  { icon: MessageSquare, title: "Advisory", description: "Focused strategic guidance on specific questions — initiative design, partnership positioning, or policy framing. Efficient and targeted." },
+  { title: "Project-Based", description: "Defined scope engagements — from strategic plans and market studies to program design. Ideal for initiatives with clear deliverables and timelines." },
+  { title: "Retainer", description: "Ongoing advisory support for organizations managing multiple economic development priorities. Flexible hours with consistent availability." },
+  { title: "Advisory", description: "Focused strategic guidance on specific questions — initiative design, partnership positioning, or policy framing. Efficient and targeted." },
 ];
 
 const clientTypes = [
-  { category: "Local Governments", image: "/placeholder.svg", items: ["Planning departments", "Economic development departments", "Mayoral initiatives"] },
-  { category: "Community Development Organizations", image: "/placeholder.svg", items: ["Community development corporations", "Neighborhood organizations", "Housing organizations"] },
-  { category: "Philanthropy & Research Institutions", image: "/placeholder.svg", items: ["Foundations", "Universities", "Policy institutes"] },
-  { category: "Private Sector & Development", image: "/placeholder.svg", items: ["Real estate developers", "Economic impact analysts", "Incentives navigation"] },
+  { category: "Local Governments", items: ["Planning departments", "Economic development departments", "Mayoral initiatives"] },
+  { category: "Community Development Organizations", items: ["Community development corporations", "Neighborhood organizations", "Housing organizations"] },
+  { category: "Philanthropy & Research Institutions", items: ["Foundations", "Universities", "Policy institutes"] },
+  { category: "Private Sector & Development", items: ["Real estate developers", "Economic impact analysts", "Incentives navigation"] },
 ];
 
 const inquiryTypes = ["General Inquiry", "Project Scoping", "Speaking Request", "Media", "Other"];
@@ -63,8 +63,6 @@ const Services = () => {
   }, [location]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // TODO: Replace with your Power Automate HTTP trigger URL
   const POWER_AUTOMATE_WEBHOOK_URL = "";
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -98,10 +96,7 @@ const Services = () => {
         }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Request failed with status ${response.status}`);
-      }
-
+      if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
       toast.success("Thank you for reaching out. We typically respond within 1–2 business days.");
       setFormData({ name: "", email: "", phone: "", organization: "", inquiryType: "", referralSource: "", message: "" });
     } catch (error) {
@@ -112,29 +107,29 @@ const Services = () => {
     }
   };
 
-  const inputClasses = "w-full px-5 py-3.5 bg-background border border-border rounded-xl text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-terracotta/30 focus:border-terracotta/40 transition-all";
-  const labelClasses = "block text-sm font-medium text-foreground mb-2.5";
+  const inputClasses = "w-full px-4 py-3 bg-background border border-border text-sm text-foreground focus:outline-none focus:border-foreground transition-colors font-body";
+  const labelClasses = "block text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground mb-2";
 
   return (
     <main className="pt-20">
       {/* Hero */}
-      <section className="relative py-20 lg:py-24 bg-secondary">
-      <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-4">Work & Services</p>
-              <h1 className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-4">
+      <section className="border-b border-border">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-0">
+            <div className="py-20 lg:py-32 lg:pr-16">
+              <p className="mono-label mb-6">Work & Services</p>
+              <h1 className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-6">
                 How We Work
               </h1>
-              <p className="text-muted-foreground text-base leading-relaxed">
+              <p className="text-muted-foreground text-base leading-relaxed max-w-md">
                 We provide strategic consulting across economic development, community investment, small business ecosystems, and policy — from initial research through implementation support.
               </p>
             </div>
-            <div className="hidden lg:block">
+            <div className="hidden lg:block relative">
               <img
                 src={communityImg}
                 alt="Community planning session"
-                className="w-full aspect-[4/3] object-cover rounded-2xl opacity-60 grayscale-[30%]"
+                className="absolute inset-0 w-full h-full object-cover grayscale"
               />
             </div>
           </div>
@@ -142,20 +137,21 @@ const Services = () => {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-5 lg:py-6">
+      <section id="services" className="py-24 lg:py-32 border-b border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-4">Consulting Services</p>
-          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-10">
+          <p className="mono-label mb-4">Consulting Services</p>
+          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-16">
             Service Areas
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.map((service) => (
-              <div key={service.title} className="bg-card p-4 rounded-xl shadow-card">
-                <h3 className="font-display text-sm text-foreground mb-2">{service.title}</h3>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+            {services.map((service, i) => (
+              <div key={service.title} className="border-t border-border pt-8">
+                <span className="mono-label">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-lg text-foreground mt-4 mb-4">{service.title}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item) => (
-                    <li key={item} className="text-muted-foreground text-xs flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-terracotta/50 mt-1.5 shrink-0" />
+                    <li key={item} className="text-muted-foreground text-sm flex items-start gap-3">
+                      <span className="w-4 h-px bg-foreground/30 mt-2.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -167,23 +163,21 @@ const Services = () => {
       </section>
 
       {/* Engagement Models */}
-      <section className="py-10 lg:py-14 bg-secondary">
+      <section className="py-24 lg:py-32 bg-secondary border-b border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3 text-center">Engagement</p>
-          <h2 className="font-display text-xl md:text-2xl text-foreground text-center mb-3">
+          <p className="mono-label mb-4 text-center">Engagement</p>
+          <h2 className="font-display text-2xl md:text-3xl text-foreground text-center mb-6">
             How We Can Work Together
           </h2>
-          <p className="text-muted-foreground text-xs text-center max-w-lg mx-auto mb-7">
+          <p className="text-muted-foreground text-sm text-center max-w-lg mx-auto mb-16">
             Every engagement is tailored to the scope and needs of the project. Here are three common models.
           </p>
-          <div className="grid md:grid-cols-3 gap-3">
-            {engagementModels.map((model) => (
-              <div key={model.title} className="bg-background p-4 rounded-lg shadow-card text-center">
-                <div className="w-8 h-8 rounded-lg bg-terracotta/10 flex items-center justify-center mx-auto mb-3">
-                  <model.icon className="text-terracotta" size={14} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-display text-sm text-foreground mb-1.5">{model.title}</h3>
-                <p className="text-muted-foreground text-[10px] leading-relaxed">{model.description}</p>
+          <div className="grid md:grid-cols-3 gap-12">
+            {engagementModels.map((model, i) => (
+              <div key={model.title} className="border-t border-border pt-8 text-center">
+                <span className="mono-label">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-lg text-foreground mt-4 mb-4">{model.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{model.description}</p>
               </div>
             ))}
           </div>
@@ -191,25 +185,20 @@ const Services = () => {
       </section>
 
       {/* Methodology */}
-      <section className="py-14 lg:py-16 bg-primary">
+      <section className="py-24 lg:py-32 bg-primary border-b border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-3">Approach</p>
-          <h2 className="font-display text-xl md:text-2xl text-primary-foreground mb-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary-foreground/40 mb-4">Approach</p>
+          <h2 className="font-display text-2xl md:text-3xl text-primary-foreground mb-16">
             Methodology
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {methodology.map((step) => (
-              <div key={step.step} className="relative bg-primary-foreground/5 p-4 rounded-xl">
-                <span className="font-display text-3xl font-bold text-primary-foreground/20 absolute top-2 right-3">
+              <div key={step.step} className="border-t border-primary-foreground/15 pt-8">
+                <span className="font-mono text-3xl font-bold text-primary-foreground/15">
                   {step.step}
                 </span>
-                <div className="pt-4">
-                  <div className="w-8 h-8 rounded-lg bg-terracotta/15 flex items-center justify-center mb-3">
-                    <step.icon className="text-terracotta" size={14} strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display text-sm text-primary-foreground mb-2">{step.title}</h3>
-                  <p className="text-primary-foreground/55 text-xs leading-relaxed">{step.description}</p>
-                </div>
+                <h3 className="font-display text-lg text-primary-foreground mt-4 mb-3">{step.title}</h3>
+                <p className="text-primary-foreground/50 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -217,59 +206,60 @@ const Services = () => {
       </section>
 
       {/* Client Types */}
-      <section className="py-20 lg:py-24">
+      <section className="py-24 lg:py-32 border-b border-border">
         <div className="container mx-auto px-6 lg:px-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-4">Who We Work With</p>
-          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-10">
+          <p className="mono-label mb-4">Who We Work With</p>
+          <h2 className="font-display text-2xl md:text-3xl text-foreground mb-16">
             Client Types
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-            {clientTypes.map((group) => (
-              <div key={group.category} className="bg-card rounded-lg shadow-card p-3">
-                <h3 className="font-display text-xs text-foreground mb-1.5">{group.category}</h3>
-                <div className="space-y-1">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {clientTypes.map((group, i) => (
+              <div key={group.category} className="border-t border-border pt-8">
+                <span className="mono-label">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-display text-base text-foreground mt-4 mb-4">{group.category}</h3>
+                <div className="space-y-2">
                   {group.items.map((item) => (
-                    <div key={item} className="flex items-center gap-1.5">
-                      <ArrowRight size={8} className="text-terracotta shrink-0" />
-                      <span className="text-muted-foreground text-[10px]">{item}</span>
+                    <div key={item} className="flex items-center gap-3">
+                      <span className="w-4 h-px bg-foreground/30 shrink-0" />
+                      <span className="text-muted-foreground text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-16 text-center">
             <Link
               to="/work"
-              className="inline-flex items-center gap-2 text-terracotta font-medium text-sm hover:underline underline-offset-4 transition-all"
+              className="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors"
             >
               See Clients' Projects
-              <ArrowRight size={16} />
+              <ArrowRight size={14} strokeWidth={1.5} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-28 lg:py-36 bg-secondary">
+      <section id="contact" className="py-24 lg:py-32 bg-secondary">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta mb-5 text-center">Contact</p>
+            <p className="mono-label mb-6 text-center">Contact</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground text-center mb-4">
               Every Project Starts With a Conversation
             </h2>
-            <p className="text-muted-foreground text-center mb-2">
+            <p className="text-muted-foreground text-center text-sm mb-2">
               Send a message to start a conversation, or reach out directly at{" "}
-               <a href="mailto:hello@dablstudio.com" className="text-terracotta hover:underline underline-offset-4">
+              <a href="mailto:hello@dablstudio.com" className="text-foreground hover:underline underline-offset-4">
                 hello@dablstudio.com
               </a>
             </p>
-            <p className="text-muted-foreground/50 text-sm text-center mb-14">
-               We typically respond within 1–2 business days.
+            <p className="text-muted-foreground/50 text-xs text-center mb-16 font-mono tracking-wide">
+              We typically respond within 1–2 business days.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={labelClasses}>Full Name *</label>
                   <input id="name" type="text" required maxLength={100} value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className={inputClasses} />
@@ -279,7 +269,7 @@ const Services = () => {
                   <input id="email" type="email" required maxLength={255} value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className={inputClasses} />
                 </div>
               </div>
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="organization" className={labelClasses}>Organization / Entity *</label>
                   <input id="organization" type="text" required maxLength={200} value={formData.organization} onChange={(e) => setFormData({ ...formData, organization: e.target.value })} className={inputClasses} />
@@ -289,7 +279,7 @@ const Services = () => {
                   <input id="phone" type="tel" maxLength={20} value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className={inputClasses} />
                 </div>
               </div>
-              <div className="grid md:grid-cols-2 gap-5">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="inquiryType" className={labelClasses}>Inquiry Type</label>
                   <select id="inquiryType" value={formData.inquiryType} onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })} className={inputClasses}>
@@ -312,7 +302,7 @@ const Services = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full md:w-auto bg-primary text-primary-foreground px-10 py-4 rounded-full font-medium text-sm hover:bg-navy-light transition-all shadow-soft disabled:opacity-50 disabled:cursor-not-allowed"
+                className="font-mono text-xs uppercase tracking-[0.2em] bg-foreground text-background px-10 py-4 hover:bg-muted-foreground transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
