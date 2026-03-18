@@ -6,15 +6,15 @@ const projects = [
   {
     slug: "community-investment-initiative",
     title: "Community Investment Initiative",
-    client: "Municipal Planning Department",
+    client: "City and Neighborhood Level",
     year: "2024",
     category: "Community Investment",
     description:
-      "Managed a multi-sector community investment strategy coordinating public, philanthropic, and private capital to strengthen neighborhood economies in underserved corridors.",
+      "Managed a multi-sector economic development effort coordinating public, philanthropic, and private capital to strengthen neighborhood economies in underserved areas.",
     outcomes: [
-      "Coordinated $12M+ in cross-sector capital deployment",
+      "Coordinated $12M+ in cross-sector capital deployment and city hall level cross-departmental program",
       "Engaged 200+ community stakeholders",
-      "Developed 5-year neighborhood investment framework",
+      "Developed 5-year neighborhood development framework",
     ],
   },
   {
@@ -24,25 +24,25 @@ const projects = [
     year: "2023",
     category: "Research & Analysis",
     description:
-      "Led research examining small business support systems across multiple districts, producing actionable recommendations for strengthening local entrepreneurship infrastructure.",
+      "Managed research project examining small business support ecosystems across a municipality producing actionable recommendations for strengthening local entrepreneurship infrastructure and standing up new program.",
     outcomes: [
-      "Mapped 80+ small business support organizations",
+      "Mapped 250+ small business support organizations",
       "Identified 12 critical ecosystem gaps",
-      "Delivered policy brief to city council",
+      "Delivered business ecosystem dashboard tracking citywide KPI's",
     ],
   },
   {
     slug: "economic-development-strategic-plan",
     title: "Economic Development Strategic Plan",
-    client: "City Economic Development Office",
+    client: "Mayor's Office ",
     year: "2023",
     category: "Strategy",
     description:
-      "Developed a comprehensive economic development framework for a municipal planning department, integrating market analysis, stakeholder input, and investment prioritization.",
+      "Developed a comprehensive economic development framework for a mayoral wealth and racial equity effort integrating landscape analysis, stakeholder input, and investment prioritization.",
     outcomes: [
-      "5-year strategic plan adopted by city council",
-      "Prioritized 15 catalytic investment zones",
-      "Created implementation roadmap with KPIs",
+      "\n\nAdvocated for strategic planning effort adopted by city council",
+      "Coordinated 15 key departments at the city and county level to collaborate on policy and programs.",
+      "Created implementation roadmap with KPIs.",
     ],
   },
   {
