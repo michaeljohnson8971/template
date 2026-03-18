@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
 
   const navItems = [
-    { label: "Home", path: "/home" },
+    { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Work & Services", path: "/services" },
   ];
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-6">
-        <Link to="/home" className="group">
+        <Link to="/" className="group">
           <span className="font-mono text-sm tracking-[0.35em] uppercase text-foreground group-hover:text-muted-foreground transition-colors">
             DABL_STUDIO
           </span>
