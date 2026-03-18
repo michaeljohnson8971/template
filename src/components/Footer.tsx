@@ -34,7 +34,7 @@ const Footer = () => {
               </a>
             </p>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/michaelleejohnson19/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-background/50 hover:text-background transition-colors"
