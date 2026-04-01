@@ -74,7 +74,7 @@ const Services = () => {
 
     if (!POWER_AUTOMATE_WEBHOOK_URL) {
       console.warn("Power Automate webhook URL is not configured. Form data:", formData);
-      toast.success("Thank you for reaching out. We typically respond within 1–2 business days.");
+      toast.success("Thank you for reaching out. We typically respond within 5–7 business days.");
       setFormData({ name: "", email: "", phone: "", organization: "", inquiryType: "", referralSource: "", message: "" });
       return;
     }
@@ -97,7 +97,7 @@ const Services = () => {
       });
 
       if (!response.ok) throw new Error(`Request failed with status ${response.status}`);
-      toast.success("Thank you for reaching out. We typically respond within 1–2 business days.");
+      toast.success("Thank you for reaching out. We typically respond within 5–7 business days.");
       setFormData({ name: "", email: "", phone: "", organization: "", inquiryType: "", referralSource: "", message: "" });
     } catch (error) {
       console.error("Form submission error:", error);
