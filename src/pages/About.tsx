@@ -93,7 +93,7 @@ const About = () => {
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <p className="mono-label mb-4">DABL Studio</p>
+              <p className="mono-label mb-4">DABL_STUDIO</p>
               <h2 className="font-display text-2xl md:text-3xl text-foreground">
                 Mission-Driven Economic Development
               </h2>
