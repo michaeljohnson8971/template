@@ -101,7 +101,7 @@ const About = () => {
             <div className="lg:col-span-7 lg:col-start-6">
               <div className="space-y-6 text-muted-foreground leading-[1.9] text-base">
                 <p>
-                  DABL Studio is a mission-driven economic development
+                  DABL_STUDIO is a mission-driven economic development
                   consultancy with deep experience managing multi-sector
                   initiatives at the intersection of community investment,
                   public policy, and research. Our work focuses on designing
