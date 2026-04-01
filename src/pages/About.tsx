@@ -70,7 +70,7 @@ const About = () => {
               </h1>
               <div className="space-y-6 text-muted-foreground text-base leading-relaxed max-w-md">
                 <p>
-                  DABL Studio was founded to bring strategic clarity and
+                  DABL_STUDIO was founded to bring strategic clarity and
                   research-driven insight to economic development challenges — with a
                   deep commitment to community impact and equitable growth.
                 </p>
