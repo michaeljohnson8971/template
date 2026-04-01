@@ -75,8 +75,8 @@ const About = () => {
               </p>
             </div>
             <div className="hidden lg:flex justify-end">
-              <div className="w-4/5 aspect-[3/4] bg-secondary border border-border flex items-center justify-center">
-                <span className="mono-label">Portrait</span>
+              <div className="w-4/5 aspect-[3/4] border border-border overflow-hidden">
+                <img src={aboutProfile} alt="Founder portrait" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
