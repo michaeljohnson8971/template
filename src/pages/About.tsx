@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, GraduationCap, Award, MapPin } from "lucide-react";
+import aboutProfile from "@/assets/about-profile.jpg";
 
 const credentials = [
   {
