@@ -96,12 +96,13 @@ const About = () => {
             <div className="lg:col-span-7 lg:col-start-6">
               <div className="space-y-6 text-muted-foreground leading-[1.9] text-base">
                 <p>
-                  DABL Studio is led by a practitioner with deep experience at
-                  the intersection of economic development strategy, community
-                  investment, and public policy. With a background spanning
-                  municipal government, nonprofit organizations, and
-                  institutional research, our work is informed by years of
-                  managing complex, multi-sector initiatives.
+                  DABL Studio is a mission-driven economic development
+                  consultancy with deep experience managing multi-sector
+                  initiatives at the intersection of community investment,
+                  public policy, and research. Our work focuses on designing
+                  strategies that translate economic development analysis into
+                  actionable programs that strengthen neighborhood economies and
+                  expand opportunity.
                 </p>
                 <p>
                   From leading community investment strategies that coordinate
