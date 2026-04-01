@@ -68,11 +68,16 @@ const About = () => {
               <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-8">
                 The Person Behind the Work
               </h1>
-              <p className="text-muted-foreground text-base leading-relaxed max-w-md">
-                DABL Studio was founded to bring strategic clarity and
-                research-driven insight to economic development challenges — with a
-                deep commitment to community impact and equitable growth.
-              </p>
+              <div className="space-y-6 text-muted-foreground text-base leading-relaxed max-w-md">
+                <p>
+                  DABL Studio was founded to bring strategic clarity and
+                  research-driven insight to economic development challenges — with a
+                  deep commitment to community impact and equitable growth.
+                </p>
+                <p>
+                  With experience spanning public, nonprofit, and institutional settings, DABL Studio builds partnerships between government agencies, philanthropic organizations, and community stakeholders to develop inclusive economic growth strategies. Our approach is grounded in rigorous research, participatory engagement, and a commitment to equitable outcomes.
+                </p>
+              </div>
             </div>
             <div className="hidden lg:flex justify-end">
               <div className="w-4/5 aspect-[3/4] border border-border overflow-hidden">
