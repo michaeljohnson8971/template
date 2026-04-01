@@ -7,8 +7,8 @@ const credentials = [
     icon: GraduationCap,
     title: "Education",
     items: [
-      "Master of Public Administration — Economic Development & Urban Policy",
-      "Bachelor of Arts — Political Science & Economics",
+      "Master of Urban Planning — Data Analytics & Real Estate Development Finance",
+      "Bachelor of Arts — Urban Studies & Economics",
     ],
   },
   {
