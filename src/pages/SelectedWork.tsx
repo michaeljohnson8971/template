@@ -40,7 +40,7 @@ const projects = [
     description:
       "Served in a senior advisory and management role within the Mayor's Office as a City Hall Fellow, providing leadership on a citywide planning and policy agenda addressing wealth inequality and economic resilience. Led cross-departmental strategies integrating land use, workforce development, infrastructure investment, and sustainability priorities.",
     outcomes: [
-      "Established and chaired interagency working groups coordinating implementation across departments.",
+      "Established and chaired interagency working groups coordinating implementation across departments",
       "Prepared technical analyses, policy memos, and executive briefings for elected officials",
       "Presented key wealth indicators spanning education, homeownership, credit, and labor",
     ],
