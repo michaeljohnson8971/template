@@ -76,13 +76,13 @@ const About = () => {
                 </p>
                 <p>
                   His decade of experience spans federal, municipal, nonprofit,
-                  higher education and consulting. Michael currently serves as
-                  the Quinlan Social Impact Initiative Manager at Loyola
-                  University Chicago, where he leads initiative that strengthen
-                  Chicago's small business ecosystem and economic development
-                  organizations. Previously, Michael served as a City Hall
-                  Fellow with the Bloomberg Center for Cities in Buffalo, New
-                  York, and as a policy consultant with PolicyLink.
+                  higher education, advocacy and consulting. Michael currently
+                  serves as the Quinlan Social Impact Initiative Manager at
+                  Loyola University Chicago, where he leads initiative that
+                  strengthen Chicago's small business ecosystem and economic
+                  development organizations. Previously, Michael served as a
+                  City Hall Fellow with the Bloomberg Center for Cities in
+                  Buffalo, New York, and as a policy consultant with PolicyLink.
                 </p>
               </div>
             </div>
