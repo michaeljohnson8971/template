@@ -15,20 +15,20 @@ const credentials = [
     icon: Award,
     title: "Professional Background",
     items: [
-      "Economic development strategy & research",
-      "Community investment initiative management",
-      "Community Planning and Development",
-      "Small business ecosystem Analysis",
+      "Economic Development & Community Investment",
+      "Urban Planning, Housing & Real Estate\u00a0",
+      "Research,Strategy,Social Impact & Public Sector Innovation",
+      "Policy Analysis and Project Management\u00a0",
     ],
   },
   {
     icon: MapPin,
     title: "Sector Experience",
     items: [
-      "Municipal planning & economic development departments",
-      "Community development organizations",
-      "Philanthropy & research institutions",
-      "University-based policy centers",
+      "Municipal Planning & Economic Development Departments",
+      "Research and Policy Organizations",
+      "Philanthropy & Non-profit",
+      "Data Analytics, Urban Informatics and Applied Research",
     ],
   },
 ];
