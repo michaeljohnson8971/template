@@ -7,8 +7,8 @@ const credentials = [
     icon: GraduationCap,
     title: "Education",
     items: [
-      "Master of Urban Planning — Data Analytics & Real Estate Development Finance",
-      "Bachelor of Arts — Urban Studies & Economics",
+      "Harvard University Master of Urban Planning — Data Analytics & Real Estate Development Finance",
+      "University of Illinois at Chicago Bachelor of Arts — Urban Studies & Economics",
     ],
   },
   {
