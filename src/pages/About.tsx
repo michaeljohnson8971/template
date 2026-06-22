@@ -7,7 +7,7 @@ const credentials = [
     icon: GraduationCap,
     title: "Education",
     items: [
-      "Harvard University Master of Urban Planning — Data Analytics & Real Estate Development Finance",
+      "Harvard University Master of Urban Planning — Concentration in Data Analytics & Real Estate Development Finance",
       "University of Illinois at Chicago Bachelor of Arts — Urban Studies & Economics",
     ],
   },
@@ -17,8 +17,8 @@ const credentials = [
     items: [
       "Economic development strategy & research",
       "Community investment initiative management",
-      "Public-nonprofit-institutional partnerships",
-      "Small business ecosystem analysis",
+      "Community Planning and Development",
+      "Small business ecosystem Analysis",
     ],
   },
   {
@@ -75,7 +75,14 @@ const About = () => {
                   community economic development challenges.&nbsp;
                 </p>
                 <p>
-                  With experience spanning federal, municipal, nonprofit, and institutional settings, DABL_STUDIO builds partnerships between government agencies, philanthropic organizations, and community stakeholders to develop inclusive economic growth strategies. Our approach is grounded in rigorous research, participatory engagement, and a commitment to transformative outcomes.
+                  His decade of experience spans federal, municipal, nonprofit,
+                  higher education and consulting. Michael currently serves as
+                  the Quinlan Social Impact Initiative Manager at Loyola
+                  University Chicago, where he leads initiative that strengthen
+                  Chicago's small business ecosystem and economic development
+                  organizations. Previously, Michael served as a City Hall
+                  Fellow with the Bloomberg Center for Cities in Buffalo, New
+                  York, and as a policy consultant with PolicyLink.
                 </p>
               </div>
             </div>
