@@ -68,7 +68,7 @@ const projects = [
     description:
       "Held overall management responsibility for neighborhood-scale planning and community development initiatives funded through public and philanthropic sources, directing a $1.5M portfolio with oversight of budgeting, compliance, and reporting.",
     outcomes: [
-      "Led update of a five-year neighborhood investment and land use plan",
+      "Led update of a five-year neighborhood development plan",
       "Managed partnerships across municipal agencies, consultants, and community stakeholders",
       "Designed internal governance and change-management systems strengthening coalition effectiveness",
     ],
