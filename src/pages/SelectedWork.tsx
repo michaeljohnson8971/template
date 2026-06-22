@@ -61,7 +61,7 @@ const projects = [
   },
   {
     slug: "englewood-neighborhood-investment-plan",
-    title: "Five-Year Neighborhood Investment & Land Use Plan",
+    title: "Five-Year Neighborhood Development \u00a0Plan",
     client: "Teamwork Englewood — Chicago, IL",
     year: "2019—2021",
     category: "Community Investment",

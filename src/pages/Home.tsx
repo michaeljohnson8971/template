@@ -48,7 +48,7 @@ const experiences = [
   },
   {
     slug: "englewood-neighborhood-investment-plan",
-    title: "Five-Year Neighborhood Investment & Land Use Plan",
+    title: "Five-Year Neighborhood Development \u00a0Plan",
     description: "Held overall management responsibility for neighborhood-scale planning and community development initiatives funded through public and philanthropic sources, directing a $1.5M portfolio with oversight of budgeting, compliance, and reporting.",
   },
 ];
