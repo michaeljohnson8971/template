@@ -27,24 +27,29 @@ const expertise = [
 
 const experiences = [
   {
-    slug: "community-investment-initiative",
-    title: "Community Investment Initiative",
-    description: "Managed a multi-sector community investment strategy coordinating public, philanthropic, and private capital to strengthen neighborhood economies in underserved corridors.",
+    slug: "small-business-ecosystem-dashboard",
+    title: "Chicago Small Business Ecosystem & Citywide Dashboard",
+    description: "Senior leader for institution-wide economic development and planning initiatives supporting Chicago-area commercial corridors and neighborhood business districts. Directed cross-functional research teams producing quantitative and qualitative analysis on business support ecosystems, macroeconomic indicators, and commercial corridor trends.",
   },
   {
-    slug: "small-business-ecosystem-research",
-    title: "Small Business Ecosystem Research",
-    description: "Led research examining small business support systems across multiple districts, producing actionable recommendations for strengthening local entrepreneurship infrastructure.",
+    slug: "climate-financing-new-england",
+    title: "Climate Financing & Capital Strategy Research",
+    description: "Founded public sector consulting firm supporting fiscally constrained municipalities in implementing equity-centered climate adaptation, economic development, and infrastructure projects. Conducted qualitative and quantitative research on current climate financing efforts across New England, including interviews with state and local leadership and analysis of fiscal policy and capital flows from public budgets.",
   },
   {
-    slug: "economic-development-strategic-plan",
-    title: "Economic Development Strategic Plan",
-    description: "Developed a comprehensive economic development framework for a municipal planning department, integrating market analysis, stakeholder input, and investment prioritization.",
+    slug: "buffalo-wealth-inequality-strategy",
+    title: "Citywide Wealth Inequality & Economic Resilience Agenda",
+    description: "Served in a senior advisory and management role within the Mayor's Office as a City Hall Fellow, providing leadership on a citywide planning and policy agenda addressing wealth inequality and economic resilience. Led cross-departmental strategies integrating land use, workforce development, infrastructure investment, and sustainability priorities.",
   },
   {
-    slug: "cross-sector-policy-collaboration",
-    title: "Cross-Sector Policy Collaboration",
-    description: "Facilitated partnerships between government agencies, university research centers, and community organizations to align economic development policy with neighborhood priorities.",
+    slug: "just-transition-policy-analysis",
+    title: "Just Transition & Green Industrial Policy Analysis",
+    description: "Conducted a national landscape analysis of labor and economic policies related to energy transition as an independent policy consultant, compiling case studies of firms leading on just transition and green industrial policy.",
+  },
+  {
+    slug: "englewood-neighborhood-investment-plan",
+    title: "Five-Year Neighborhood Investment & Land Use Plan",
+    description: "Held overall management responsibility for neighborhood-scale planning and community development initiatives funded through public and philanthropic sources, directing a $1.5M portfolio with oversight of budgeting, compliance, and reporting.",
   },
 ];
 
