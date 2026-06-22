@@ -70,12 +70,13 @@ const About = () => {
               </h1>
               <div className="space-y-6 text-muted-foreground text-base leading-relaxed max-w-md">
                 <p>
-                  DABL_STUDIO was founded to bring strategic clarity and
-                  research-driven insight to economic development challenges — with a
-                  deep commitment to community impact and equitable growth.
+                  Michael Johnson founded DABL to bring strategic clarity human
+                  centeredness and data-driven insight to community economic
+                  development challenges. A life with a deep commitment to
+                  community impact and equitable growth.
                 </p>
                 <p>
-                  With experience spanning public, nonprofit, and institutional settings, DABL Studio builds partnerships between government agencies, philanthropic organizations, and community stakeholders to develop inclusive economic growth strategies. Our approach is grounded in rigorous research, participatory engagement, and a commitment to equitable outcomes.
+                  With experience spanning public, nonprofit, and institutional settings, DABL_STUDIO builds partnerships between government agencies, philanthropic organizations, and community stakeholders to develop inclusive economic growth strategies. Our approach is grounded in rigorous research, participatory engagement, and a commitment to equitable outcomes.
                 </p>
               </div>
             </div>
